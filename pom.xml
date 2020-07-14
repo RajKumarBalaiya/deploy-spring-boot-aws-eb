@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.springboot.elasticbeanstalk</groupId>
-	<artifactId>springboot_elastic_beanstalk</artifactId>
+	<artifactId>deploy-spring-boot-aws-eb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>springboot_elastic_beanstalk</name>

@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+    commands:
+      - echo install
+  pre_build:
+    commands:
+      - echo pre build
+  build:
+    commands:
+      - mvn clean package
+      - echo build
+  post_build:
+    commands:
+      - echo post build
+reports:
+  report-group-name-or-arn:
+    files:
+      - target/deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war
