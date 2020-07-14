@@ -16,7 +16,6 @@ phases:
   post_build:
     commands:
       - echo post build
-reports:
-  report-group-name-or-arn:
-    files:
+artifacts:
+  files:
       - target/deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war
