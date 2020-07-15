@@ -65,6 +65,6 @@ public class StudentController {
 
 	@GetMapping("/healthCheck")
 	public String healthCheck() {
-		return "Code Pipeline";
+		return "Welcome To Code Pipeline";
 	}
 }
