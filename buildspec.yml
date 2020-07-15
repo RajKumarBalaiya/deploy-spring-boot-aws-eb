@@ -1,20 +1,21 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      java: corretto8
+    commands:
+      - echo install
+  pre_build:
+    commands:
+      - echo pre build
   build:
     commands:
-      - echo Entered the build phase...
-      - echo Build started on `date`
       - mvn clean package
+      - echo build
   post_build:
     commands:
-      - echo Build completed successfully
+      - echo post build
 artifacts:
   files:
-    - target/deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war
-  discard-paths: yes
-
-cache:
-  paths:
-    - '/root/.m2/**/*'
-    
+      - target/deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war
