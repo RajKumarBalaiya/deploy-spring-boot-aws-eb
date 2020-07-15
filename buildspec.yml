@@ -1,23 +1,21 @@
 version: 0.2
-            
 phases:
   install:
     runtime-versions:
       java: corretto8
-    commands:
-      - echo install
   pre_build:
     commands:
-      - echo pre_build
+    - echo In the pre_build phase...
   build:
     commands:
-      - mvn package
-      - echo build
+    - echo Build started on `date`
   post_build:
     commands:
-      - echo post_build
-
+    - echo Build completed on `date`
+    - mvn package
+    - mv target/deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war
 artifacts:
   files:
-    - target/deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war
+  - bike-service-0.0.1-SNAPSHOT.war
+  - .ebextensions/**/*
  
