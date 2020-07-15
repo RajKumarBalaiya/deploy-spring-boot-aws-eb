@@ -1,16 +1,21 @@
 version: 0.2
+
 phases:
-  pre_build:
-    commands:
-    - echo "Entered the pre-build phase"
-  build:
-    commands:
-    - echo "Entered build phase"
-    - mvn clean prepare-package war:exploded
-  post_build:
-    commands:
-    - echo "Entered the post-build phase"
-    - mv target/deploy ./
+    install:
+        runtime-versions:
+            java: openjdk8
+    pre_build:
+        commands:
+            - echo CODEBUILD_RESOLVED_SOURCE_VERSION
+    build:
+        commands:
+            - mvn compile
+    post_build:
+        commands:
+            - mvn package
+            - mkdir artifact   
+            - unzip target/deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war -d artifact/
 artifacts:
-  files:
-    - deploy/**/*
+    files:
+        - artifact/**/*
+    name: artifact
