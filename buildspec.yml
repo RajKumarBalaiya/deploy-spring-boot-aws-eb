@@ -13,9 +13,7 @@ phases:
     commands:
     - echo Build completed on `date`
     - mvn package
-    - mv target/deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war ./deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war
 artifacts:
   files:
-  - deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war
-  - .ebextensions/**/*
+  - target/deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war
  
