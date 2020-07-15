@@ -10,8 +10,7 @@ phases:
     commands:
     - echo Build completed on `date`
     - mvn clean package
+    - mv target/deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war ./
 artifacts:
   files:
-  - target/deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT*/*
-  discard-paths: yes
- 
+  - deploy-spring-boot-aws-eb-0.0.1-SNAPSHOT.war
